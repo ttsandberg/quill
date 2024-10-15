@@ -448,6 +448,7 @@ function getListType(type: string | undefined) {
 }
 
 function normalizeDelta(delta: Delta) {
+  console.log('normalizeDelta', delta);
   return delta.reduce((normalizedDelta, op) => {
     if (typeof op.insert === 'string') {
       const text = op.insert.replace(/\r\n/g, '\n').replace(/\r/g, '\n');
